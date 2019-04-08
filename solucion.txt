@@ -1,0 +1,57 @@
+A,[50];i, i[1-n]; numeroAutos, i[1-n]; marca, x[20]; origen, x[20]; costo, i[1-n]; imp, i[1-n]; precioVenta, i[1-n]; totalImpuestos, i[1-n]; totalPreciosVenta, i[1-n]; origenArgentina, i[1-n]; origenColombia, i[1-n]; origenChile, i[1-n]; origenOtros, i[1-n]
+A<-""; i<-1; numeroAutos<-0; marca<-""; origen<-""; costo<-0; imp<-0; precioVenta<-0; totalImpuestos<-0; totalPreciosVenta<-0; origenArgentina<-0; origenColombia<-0; origenChile<-0; origenOtros<-0
+
+Inicio
+   <<"Ingrese el numero de autos a ingresar."
+   >>numeroAutos
+   Para (i=1; i=<numeroAutos; i++) Hacer
+     <<"Ingrese la marca del vehiculo."
+     >>marca
+     <<"Ingrese el pais de origen del vehiculo." 
+     >>origen
+     <<"Ingrese el costo del vehiculo."
+     >>costo
+     Si (origen=="Argentina") entonces
+       imp=(costo*20)/100
+       precioVenta=costo+imp
+       totalImpuestos=totalImpuestos+imp
+       imp<-0
+       totalPreciosVenta=totalPreciosVenta+precioVenta
+       precioVenta<-0
+       origenArgentina=origenArgentina+1
+     Caso Contrario
+       Si(origen=="Colombia") entonces
+         imp=(costo*25)/100
+         precioVenta=costo+imp
+         totalImpuestos=totalImpuestos+imp
+         imp<-0
+         totalPreciosVenta=totalPreciosVenta+precioVenta
+         precioVenta<-0
+         origenColombia=origenColombia+1
+       Caso Contrario
+         Si (origen=="Chile") entonces
+            imp=(costo*30)/100
+            precioVenta=costo+imp
+            totalImpuestos=totalImpuestos+imp
+            imp<-0
+            totalPreciosVenta=totalPreciosVenta+precioVenta
+            precioVenta<-0
+            origenChile=origenChile+1
+         Caso Contrario
+            imp=(costo*40)/100
+            precioVenta=costo+imp
+            totalImpuestos=totalImpuestos+imp
+            imp<-0
+            totalPreciosVenta=totalPreciosVenta+precioVenta
+            precioVenta<-0
+            origenOtros=origenOtros+1
+         FinSi
+     FinSi
+   FinPara
+   <<"El numero total de autos registrados es:" +numeroAutos
+   <<"El numero total de impuestos generados es:" +totalImpuestos
+   <<"El numero total de los precios de venta de los vehiculos es:" +totalPreciosVenta
+   <<"El numero de vehiculos importados de Argentina es:" +origenArgentina
+   <<"El numero de vehiculos importados de Colombia es:" +origenColombia
+   <<"El numero de vehiculos importados de Chile es:" +origenChile
+   <<"El numero de vehiculos importados de otros paises es:" +origenOtros
